@@ -14,6 +14,9 @@ This project provides a Python script that helps monitor the health of your syst
 - **CPU Usage**: Evaluates CPU usage and displays relevant information.
 - **Email Reports**: Sends a comprehensive health report to a specified email address.
 - **Cron Job**: Sets up a cron job to run the script periodically (every 4 hour).
+- **Error Handling**: Gracefully handles the invalid input emails and input selection
+
+   ![System Health Report](images/running-script.png)
 
 ## Files
 
@@ -78,10 +81,19 @@ This project provides a Python script that helps monitor the health of your syst
 
 ## Usage
 
-1. Run the script and choose from the menu options.
-2. To send a report immediately, choose the option to send via email.
-3. To set up a cron job, enter the email address where you want to receive periodic reports.
-4. Exit the script after completing the tasks.
+1. Run the script and choose from the menu options. ![System Health Report](images/running-script.png)
+
+2. Select the option 1 to view the disk usage.![Disk Usage](images/option1.png)
+3. Select the option 2 to monitor running services.![Option2](images/option2.png)
+4. Select the option 3 to access memory usage.![Option3](images/option3.png)
+5. Select the option 4 to evaluate CPU usage.![Option4](images/option4.png)
+6. To send a report immediately, choose the option 5 to send via email. First let's enter an invalid email to see proper error message.![invalid-email](images/option5-invalid-email.png)
+7. Now, enter a valid email address.![valid-email](images/option5-correct-email.png)
+8. Validate that we have received the email. ![email](images/email-sent.png)
+10. To set up a cron job, enter the email address where you want to receive periodic reports. ![option6-cronjob](images/option6-cronjob.png)![cron](images/cronjob-setup.png)
+11. Now, re-enter the email address to see "Cron job already exists" message. ![option6-cronjob](images/option6-cronjob-exist.png)
+12. Enter any invalid option/number to view error message. ![invalid-option](images/invalid-option.png)
+13. Exit the script after completing the tasks.![Exit](images/option7.png)
 
 ### Command-Line Options
 - `--email <email>`: Send a report immediately to the specified email address.
