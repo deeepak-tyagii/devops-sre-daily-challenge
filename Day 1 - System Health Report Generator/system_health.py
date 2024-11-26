@@ -48,8 +48,13 @@ def check_disk_usage():
 # Monitor running services
 def monitor_services():
     log_message(f"{YELLOWTEXT}Monitoring running services...{NOFORMAT}")
-    result = subprocess.run(["systemctl", "list-units", "--type=service", "--state=running"], capture_output=True, text=True)
-    print(result.stdout)
+    result = subprocess.run(['service', '--status-all'], capture_output=True, text=True)
+    
+    # Print the output
+    for line in result.stdout.splitlines():
+        if '[ + ]' in line:  # Filtering for running services
+            print(line)
+
     with open(LOG_FILE, "a") as log_file:
         log_file.write(result.stdout)
 
