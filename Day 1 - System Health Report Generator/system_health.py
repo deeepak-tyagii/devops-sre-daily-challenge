@@ -133,7 +133,7 @@ def send_report(email: str):
             server.login(sender_email, sender_password)
             server.sendmail(sender_email, email, msg.as_string())
             server.quit()
-            log_message(f"Report sent successfully to {email}")
+            log_message(f"{GREENTEXT}Report sent successfully to {NOFORMAT} {email}")
         except Exception as e:
             exception_handler(f"Failed to send email: {str(e)}")
     else:
