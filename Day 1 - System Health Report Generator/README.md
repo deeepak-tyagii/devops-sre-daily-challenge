@@ -68,6 +68,11 @@ This project provides a Python script that helps monitor the health of your syst
    ```bash
    pip install -r requirements.txt
    ```
+   
+4. Make sure to update the sender email and sender password in the python file:
+   ```bash
+   nano system_health.py
+   ```
 
 4. Run the Python script:
    ```bash
